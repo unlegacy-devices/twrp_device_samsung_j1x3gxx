@@ -31,7 +31,7 @@ TARGET_OTA_ASSERT_DEVICE := j1x3gxx
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 11268352 # This is the maximum known partition size, but it can be higher, so we just omit it
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216 # This is the maximum known partition size, but it can be higher, so we just omit it
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -41,7 +41,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 buildvariant=eng
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/zImage
 TARGET_PREBUILT_DT := $(DEVICE_PATH)/prebuilt/dt.img
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -55,7 +54,7 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_HEADER_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/samsung/j1x3gxx
-TARGET_KERNEL_CONFIG := j1x3gxx_defconfig
+TARGET_KERNEL_CONFIG := j1x3g-dt_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := sc8830
