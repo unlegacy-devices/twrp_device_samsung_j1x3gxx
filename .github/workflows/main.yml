@@ -30,6 +30,7 @@ jobs:
           python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-5.1
           python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
           git clone https://github.com/unlegacy-devices/twrp_device_samsung_j1x3gxx.git -b twrp-5.1 ~/TWRP/device/samsung/j1x3gxx
+          git clone https://github.com/unlegacy-devices/android_kernel_samsung_j1x3g -b stock-LP ~/TWRP/kernel/samsung/j1x3g
       - name: Building TWRP
         run: |
           OLDPATH=$PATH
